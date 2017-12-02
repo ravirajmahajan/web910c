@@ -53,7 +53,7 @@ session_start();
 		<label for="inputPassword2" class="sr-only">Password</label>
 		<input type="password" class="form-control" name="pwd" placeholder="Password">
 	  </div>
-	  <p><input type="submit" value="Sign In" name="submit" /></p>
+	  <p><input type="submit" class="btn btn-outline-success" value="Sign In" name="submit" /></p>
 	</form>
   </div>
 </nav>
@@ -69,14 +69,36 @@ session_start();
 	<br>
 	<h1>Welcome to KaShare</h1>
 	<h2>To share is to care.</h2>
+	<h4>Book a car for now or for later. Get great rates.</h4>
+	<br>
+		
+		<div class="d-block d-md-none" > 
+		<form class="" action="signInUser.php" method="post">
+	  <div class="form-group">
+		<label for="email2" class="sr-only">Email</label>
+		<input type="text" class="form-control" name="userMail" placeholder="Email ID"
+	  <div class="form-group mx-sm-3">
+		<label for="inputPassword2" class="sr-only">Password</label>
+		<input type="password" class="form-control" name="pwd" placeholder="Password">
+	  </div><br>
+	  <p><input type="submit" class="btn btn-outline-success" value="Sign In" name="submit" /></p>
+	</form>
+	</div>
+	
+	
 	</center>
 	</div>
 	
 	<div class="col-lg-6 bordes">
 	<center>
+	<br>
+	<br>
 	<h2>Sign Up to Get Started Now!</h2>
+	<h4>Book from a wide varieties of cars or lease out your own to earn some extra bucks!</h4>
+	<button type="submit" id="signUp" class="btn btn-success pad" >Sign Me Up</button>
+	
 	</center>		
-		<form action="signUpUser.php" method="post" autocomplete="on">
+		<form id="signUpForm" action="signUpUser.php" style="display:none" method="post" autocomplete="on">
 		  <div class="form-row">
 			<div class="form-group col-md-6">
 			<label for="inputAddress">First Name</label>
@@ -144,11 +166,20 @@ session_start();
 	</div>
 	
     <!-- Optional JavaScript -->
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </body>
+  	<script>
+		$(document).ready(function(){
+			
+			$("#signUp").click(function(){
+				$("#signUpForm").show();
+			});
+		});
+	</script>
 </html>
 
 

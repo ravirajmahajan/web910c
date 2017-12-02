@@ -59,7 +59,10 @@ session_start();
 	<center>
 	<br>
 	<h2>Book a car near you.</h2>
+	
 	<p>Get all kinds of cars to suit your needs. Take a long drive or run some errands. The world is your oyster.</p>
+	<button type="submit" class="btn btn-success pad" onclick='';>Book </button>
+	
 	
 	</center>
 	</div>
@@ -70,6 +73,9 @@ session_start();
 	<center>
 	<h2>Put your car for hire</h2>
 	<p>Let your car earn for you.</p>
+	<button type="submit" class="btn btn-success pad" onclick='';>Let my car out</button>
+	<br><br>
+	<button type="submit" class="btn btn-success pad" onclick='';>Add a car to my profile</button>
 	</center>		
 		<form action="signUpUser.php" method="post" autocomplete="on">
 		  <div class="form-row">
