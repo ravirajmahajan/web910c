@@ -1,8 +1,8 @@
 <?php
 session_start();
-//if user is already signed in move to home page
-  if(isset($_SESSION['UId'])){
-  header("Location: home.php"); 
+//give access only if the user has gotten to this page after signing in
+  if(!isset($_SESSION['UId'])){
+  header("Location: index.php"); 
   exit();
   }
 ?>
@@ -15,7 +15,7 @@ session_start();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- CSS here for now -->
-	<style> .bordes { border-style: solid; border-width: 7px}</style>
+	
 	<link href="css/custom.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -44,37 +44,32 @@ session_start();
       <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
       <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
     <!-- </form> -->
-	<form class="form-inline" action="signInUser.php" method="post">
-	  <div class="form-group">
-		<label for="email2" class="sr-only">Email</label>
-		<input type="text" class="form-control" name="userMail" placeholder="email@example.com">
-	  </div>
-	  <div class="form-group mx-sm-3">
-		<label for="inputPassword2" class="sr-only">Password</label>
-		<input type="password" class="form-control" name="pwd" placeholder="Password">
-	  </div>
-	  <p><input type="submit" value="Sign In" name="submit" /></p>
-	</form>
+<p><a class="btn btn-success btn-sm" href="signOut.php" role="button">Sign Out</a></p>
   </div>
 </nav>
     <!-- navbar ends -->
 	
   <body>
 	<div class="container-fluid">
-
+	<h3>Welcome <?php echo $_SESSION['fname'];?></h3>
 	<div class="row">
 	
+	<!-- left half -->
 	<div class="col-lg-6 bordes">
 	<center>
 	<br>
-	<h1>Welcome to KaShare</h1>
-	<h2>To share is to care.</h2>
+	<h2>Book a car near you.</h2>
+	<p>Get all kinds of cars to suit your needs. Take a long drive or run some errands. The world is your oyster.</p>
+	
 	</center>
 	</div>
+	<!-- left half end -->
 	
+	<!-- right half -->
 	<div class="col-lg-6 bordes">
 	<center>
-	<h2>Sign Up to Get Started Now!</h2>
+	<h2>Put your car for hire</h2>
+	<p>Let your car earn for you.</p>
 	</center>		
 		<form action="signUpUser.php" method="post" autocomplete="on">
 		  <div class="form-row">
@@ -137,7 +132,7 @@ session_start();
 
 		<br>
 	</div>
-	
+	<!-- right half end -->
 	</div>
 		
 <!-- container div	ends	 -->
